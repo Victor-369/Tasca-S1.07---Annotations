@@ -1,7 +1,7 @@
 package com.pruebas.proyecto.nivell1.exercici1.model;
 
 public class OnlineWorker extends Worker {
-    private static double flatRateInternet =  30d;
+    private static final double FLAT_RATE_INTERNET =  30d;
 
     public OnlineWorker(String name, String surname, double priceHour) {
         super(name, surname, priceHour);
@@ -9,6 +9,6 @@ public class OnlineWorker extends Worker {
 
     @Override
     public double calculateSalary(int totalHoursMonth) {
-        return super.getPriceHour() * totalHoursMonth + flatRateInternet;
+        return super.calculateSalary(totalHoursMonth) + FLAT_RATE_INTERNET;
     }
 }
