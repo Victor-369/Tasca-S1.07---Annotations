@@ -13,6 +13,6 @@ public class OnSiteWorker extends Worker {
 
     @Override
     public double calculateSalary(int totalHoursMonth) {
-        return super.getPriceHour() * totalHoursMonth + petrol;
+        return super.calculateSalary(totalHoursMonth) + petrol;
     }
 }
