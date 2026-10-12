@@ -9,26 +9,26 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class OnSiteWorkerTest {
     @Test
     void constructor_givenValidData_storesOnSiteWorkerDetails() {
-        OnSiteWorker workerOnSite = new OnSiteWorker("Elisa", "Thorn", 40);
+        OnSiteWorker onSiteWorker = new OnSiteWorker("Elisa", "Thorn", 40);
 
-        assertEquals("Elisa", workerOnSite.getName());
-        assertEquals("Thorn", workerOnSite.getSurname());
-        assertEquals(40, workerOnSite.getPriceHour());
-        assertEquals(15, workerOnSite.getPetrol());
+        assertEquals("Elisa", onSiteWorker.getName());
+        assertEquals("Thorn", onSiteWorker.getSurname());
+        assertEquals(40, onSiteWorker.getPriceHour());
+        assertEquals(15, onSiteWorker.getPetrol());
     }
 
     @Test
     void calculateSalary_givenTenHours_includesPetrolAllowance() {
-        OnSiteWorker workerOnSite = new OnSiteWorker("John", "Smith", 36);
+        OnSiteWorker onSiteWorker = new OnSiteWorker("John", "Smith", 36);
 
-        assertEquals(375, workerOnSite.calculateSalary(10));
+        assertEquals(375, onSiteWorker.calculateSalary(10));
     }
 
     @Test
     void calculateSalary_givenZeroHours_returnsPetrolAllowance() {
-        OnSiteWorker workerOnSite = new OnSiteWorker("John", "Smith", 36);
+        OnSiteWorker onSiteWorker = new OnSiteWorker("John", "Smith", 36);
 
-        assertEquals(15, workerOnSite.calculateSalary(0));
+        assertEquals(15, onSiteWorker.calculateSalary(0));
     }
 
     @Test
