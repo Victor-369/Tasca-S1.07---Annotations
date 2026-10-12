@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class WorkerTest {
     @Test
-    void constructor_givenDifferentData_assignsEachAttribute() {
-        Worker worker = new Worker("John", "Smith", 36);
+    void constructor_givenValidData_initialisesWorkerWithProvidedValues() {
+        Worker worker = new Worker("John", "Smith", 60);
 
         assertEquals("John", worker.getName());
         assertEquals("Smith", worker.getSurname());
-        assertEquals(36, worker.getPriceHour());
+        assertEquals(60, worker.getPriceHour());
     }
 
     @Test
