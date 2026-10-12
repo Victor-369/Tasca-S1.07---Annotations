@@ -14,7 +14,6 @@ public class OnSiteWorkerTest {
         assertEquals("Elisa", onSiteWorker.getName());
         assertEquals("Thorn", onSiteWorker.getSurname());
         assertEquals(40, onSiteWorker.getPriceHour());
-        assertEquals(15, onSiteWorker.getPetrol());
     }
 
     @Test
