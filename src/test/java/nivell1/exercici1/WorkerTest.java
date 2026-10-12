@@ -25,9 +25,9 @@ public class WorkerTest {
 
     @Test
     void calculateSalary_givenZeroHours_returnsZero() {
-        Worker worker = new Worker("John", "Smith", 0);
+        Worker worker = new Worker("John", "Smith", 56);
 
-        assertEquals(0, worker.calculateSalary(10));
+        assertEquals(0, worker.calculateSalary(0));
     }
 
     @Test
