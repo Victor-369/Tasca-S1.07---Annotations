@@ -19,7 +19,7 @@ From the project root:
 
 ```bash
 mvn compile
-java -cp target/classes com.pruebas.proyecto.nivell1.Main
+java -cp target/classes com.pruebas.proyecto.nivell1.exercici1.Main
 ```
 
 ## Run the tests
