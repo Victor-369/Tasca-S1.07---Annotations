@@ -2,17 +2,20 @@
 
 ## Exercise 1: `@JsonSerializable`
 
-This exercise introduces custom annotations and runtime reflection in Java. The goal is to define a reusable annotation that marks a class as serialisable to JSON and then use reflection to discover that metadata at runtime.
+This exercise introduces custom annotations and runtime reflection in Java. The goal is to define a reusable annotation that marks 
+a class as serialisable to JSON and then use reflection to discover that metadata at runtime.
 
 ### What the application does
 
-The project defines a custom annotation named `@JsonSerializable`, which stores the destination directory where the generated JSON file should be saved. The `Person` class is annotated with:
+The project defines a custom annotation named `@JsonSerializable`, which stores the destination directory where the generated JSON 
+file should be saved. The `Person` class is annotated with:
 
 ```java
 @JsonSerializable(destinationDirectory = "output")
 ```
 
-The `JsonSerializer` class reads the annotation from the class at runtime, validates that the class is correctly annotated, creates the target directory if it does not exist, and writes the object as a JSON file using Jackson.
+The `JsonSerializer` class reads the annotation from the class at runtime, validates that the class is correctly annotated, 
+creates the target directory if it does not exist, and writes the object as a JSON file using Jackson.
 
 ### Main components
 
@@ -26,7 +29,7 @@ The `JsonSerializer` class reads the annotation from the class at runtime, valid
 `JsonSerializer.serialize(Object)` calls:
 
 ```java
-object.getClass().getAnnotation(JsonSerializable.class)
+object.getClass().getAnnotation(JsonSerializable.class);
 ```
 
 If the annotation is missing, the method throws an `IllegalArgumentException`. Otherwise, it:
@@ -41,11 +44,18 @@ If the annotation is missing, the method throws an `IllegalArgumentException`. O
 From the project root:
 
 ```bash
-mvn compile
-java -cp target/classes com.pruebas.proyecto.nivell2.exercici1.Main
+mvn compile org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=com.pruebas.proyecto.nivell2.exercici1.Main
 ```
 
 The console prints the path of the generated JSON file, and the file is saved in the `output` folder.
+
+### Run the tests
+
+The tests use JUnit Jupiter. Run them with the Surefire version configured in `pom.xml`:
+
+```bash
+mvn test
+```
 
 ### Example output
 

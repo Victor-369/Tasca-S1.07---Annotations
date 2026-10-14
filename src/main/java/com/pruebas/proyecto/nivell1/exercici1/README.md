@@ -27,8 +27,8 @@ java -cp target/classes com.pruebas.proyecto.nivell1.exercici1.Main
 
 ### Run the tests
 
-The tests use JUnit 5. Run them with a JUnit 5-compatible Surefire version:
+The tests use JUnit Jupiter. Run them with the Surefire version configured in `pom.xml`:
 
 ```bash
-mvn test-compile org.apache.maven.plugins:maven-surefire-plugin:3.5.3:test
+mvn test
 ```
