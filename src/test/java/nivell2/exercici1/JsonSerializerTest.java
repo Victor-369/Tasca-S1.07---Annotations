@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class JsonSerializerTest {
 
     @Test
-    void serializeCreatesJsonFileInAnnotatedDirectory() throws IOException {
+    void serialise_givenAnnotatedPerson_writesJsonToAnnotatedDirectory() throws IOException {
         Person person = new Person("Ada Lovelace", 36);
         JsonSerializer serializer = new JsonSerializer();
 
@@ -35,7 +35,7 @@ class JsonSerializerTest {
     }
 
     @Test
-    void serializeWithoutAnnotationThrowsException() {
+    void serialise_givenUnannotatedObject_throwsIllegalArgumentException() {
         JsonSerializer serializer = new JsonSerializer();
 
         assertThrows(IllegalArgumentException.class, () -> serializer.serialize(new Object()));

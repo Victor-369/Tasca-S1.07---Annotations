@@ -63,7 +63,7 @@ public class OnSiteWorkerTest {
 
     @Test
     @SuppressWarnings("deprecation")
-    void deprecatedSalaryMethod_matchesCurrentSalaryCalculation() {
+    void calculateSalaryIncludingPetrolAllowance_givenTenHours_matchesCurrentSalaryCalculation() {
         OnSiteWorker worker = new OnSiteWorker("John", "Smith", 36);
 
         assertEquals(
@@ -73,7 +73,7 @@ public class OnSiteWorkerTest {
     }
 
     @Test
-    void deprecatedSalaryMethod_isMarkedDeprecated() throws NoSuchMethodException {
+    void calculateSalaryIncludingPetrolAllowance_whenInspected_isMarkedDeprecated() throws NoSuchMethodException {
         assertTrue(OnSiteWorker.class
                 .getMethod("calculateSalaryIncludingPetrolAllowance", int.class, double.class)
                 .isAnnotationPresent(Deprecated.class));

@@ -75,7 +75,7 @@ public class OnlineWorkerTest {
 
     @Test
     @SuppressWarnings("deprecation")
-    void deprecatedSalaryMethod_matchesCurrentSalaryCalculation() {
+    void calculateSalaryIncludingInternetAllowance_givenTenHours_matchesCurrentSalaryCalculation() {
         OnlineWorker worker = new OnlineWorker("John", "Smith", 36);
 
         assertEquals(
@@ -85,7 +85,7 @@ public class OnlineWorkerTest {
     }
 
     @Test
-    void deprecatedSalaryMethod_isMarkedDeprecated() throws NoSuchMethodException {
+    void calculateSalaryIncludingInternetAllowance_whenInspected_isMarkedDeprecated() throws NoSuchMethodException {
         assertTrue(OnlineWorker.class
                 .getMethod("calculateSalaryIncludingInternetAllowance", int.class, double.class)
                 .isAnnotationPresent(Deprecated.class));
